@@ -6,29 +6,29 @@ const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
     {
-        enunciado: "Na sua opinião, considerando a cultura contemporânea do 'fazer menos é fazer mais', a prática da castração de animais deve ser vista como: uma medida necessária para controlar a superpopulação e promover a saúde dos animais; ou como uma intervenção desnecessária que pode interferir nos processos naturais de reprodução?",
+        enunciado: "A DESIGUALDADE SOCIAL TEM HAVER COM O AQUECIMENTO GLOBAL, EXISTEM MUSICAS QUE CONSCIENTIZEM ISSO?",
         alternativas: [
             {
-                texto: "A prática da castração de animais deve ser vista como uma medida necessária para controlar a superpopulação e promover a saúde dos animais, alinhando-se com a ideia de que menos animais significa mais qualidade de vida para cada um deles.",
-                afirmação: "a tribo permite a castração de algumas especies de animais  para controle"
+                texto: "SIM",
+                afirmação: "0s dados mostram que os 10% mais ricos do mundo respondem por 49% das emissões, enquanto os 10% mais pobres emitem apenas 1% dos gases de efeito estufa (em CO2-equivalente). Uma musica que fala sobre isso, é Michael Jackson - “Earth song”  a letra questiona a indiferença da sociedade diante dos problemas ambientais e das injustiças sociais, instigando uma reflexão sobre as consequências de nossas ações e a urgência de mudanças."
             },
             {
-                texto: "A castração de animais pode ser vista como uma intervenção desnecessária que interfere nos processos naturais de reprodução, desconsiderando que os ecossistemas têm capacidade de ajustar suas populações naturalmente.",
-                afirmação: "a tribo entende que a reprodução é necessario e nao deve ser contida"
+                texto: "NÃO",
+                afirmação: "algumas pessoas com pouco acesso a informação, acreditam que não é verídico o aquecimento  global e sua consequência"
             }
         ]
     },
     {
-        enunciado: "Qual é a visão de cada tribo indigena  diante da castração de animais sendo que é  realidade  a cultura do menos é mais já é pertinente?",
-
+        enunciado: "músicas podem influenciar a opinião do público sobre desigualdade social e o aquecimento global",
+        
         alternativas: [
             {
-                texto: "Desafiador.",
-                afirmacao: "A cultura dos povos indígenas é rica e caracteriza-se pela intensa relação com a natureza.A questão da procriação é natural e vista como comum."
+                texto: "sim.",
+                afirmacao: "A música é reconhecida por muitos pesquisadores como uma modalidade que desenvolve a mente humana, então sim é possível mudar a opinião pública."
             },
             {
-                texto: "Apoiam as medidas já tomadas.",
-                afirmacao: "Em algumas culturas indígenas, a castração pode ser realizada por meio de métodos que utilizam ervas ou técnicas de restrição que são menos invasivas comparadas às cirurgias modernas. Isso reflete uma abordagem de menos é mais ao evitar procedimentos complexos e traumáticos."
+                texto: "Não.",
+                afirmacao: "existem pessoas de mente fechada então pode ser que não mude."
 
             }
         ]
@@ -43,52 +43,4 @@ const perguntas = [
             },
             {
                 texto: "Ser parceiro das ações",
-                afirmacao: "Trabalho voluntário de veterinários"
-            }
-        ]
-    }
-];
-
-let atual = 0;
-let perguntaAtual;
-let historiaFinal = "";
-
-function mostraPergunta() {
-    if (atual >= perguntas.length) {
-        mostraResultado();
-        return;
-    }
-
-    perguntaAtual = perguntas[atual];
-    caixaPerguntas.textContent = perguntaAtual.enunciado;
-    caixaAlternativas.textContent = "";
-    mostraAlternativas();
-}
-
-function mostraAlternativas() {
-    for (const alternativa of perguntaAtual.alternativas) {
-        const botaoAlternativas = document.createElement("button");
-        botaoAlternativas.textContent = alternativa.texto;
-        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
-        caixaAlternativas.appendChild(botaoAlternativas);
-    }
-}
-
-function respostaSelecionada(opcaoSelecionada) {
-    const afirmacoes = opcaoSelecionada.afirmacao;
-    historiaFinal += afirmacoes + " ";
-    atual++;
-    mostraPergunta();
-}
-
-function mostraResultado() {
-    caixaPerguntas.textContent = "Em 2049...";
-    textoResultado.textContent = historiaFinal;
-    caixaAlternativas.textContent = "";
-}
-
-mostraPergunta();s.textContent = alternativa.texto;
-botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
-caixaAlternativas.appendChild(botaoAlternativas);
-
-
+                afirmacao: "Trabalho voluntário de veterinários
